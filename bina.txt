@@ -22,7 +22,7 @@ int main()
 
   algoritmoBurbuja(arreglo1, t);
 
-  busquedaBinaria(arreglo1,t,10);
+  busquedaBinaria(arreglo1,t,9);
   
  
 }
@@ -52,8 +52,15 @@ void busquedaBinaria (int arr[], int t, int dato)
   }
   
   while(i<=j);
-  
+
+ binario<<"el arreglo es ";
+
+for(i=0;i<t;i++){
+binario<<arr[i];
+}
+binario<<endl;
   cout <<"Elemento buscado :"<<dato<<endl;
+  binario<<"Elemento buscado :"<<dato<<endl;
   if (arr[k]!=b){
     cout<<"El elemento a buscar no esta en el arreglo"<<endl;
     binario<<"EL ELEMENTO A BUSCAR NO ESTA EN EL ARREGLO "<<arr[k];
@@ -63,7 +70,7 @@ void busquedaBinaria (int arr[], int t, int dato)
     binario<<"EL ELEMENTO A BUSCAR SI ESTA EN EL ARREGLO "<<arr[k];
 
   }
-  
+  binario<<endl;
   //binario<<"EL ELEMENTO A BUSCAR SI ESTA EN EL ARREGLO "<<arr[k];
   binario.close();
 }
