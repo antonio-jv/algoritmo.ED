@@ -1,0 +1,61 @@
+#include<fstream>
+#include<iostream>
+using namespace std;
+void uvas();
+
+int main() {
+	
+	uvas();
+	return 0;
+}
+void uvas(){
+	int kilos;
+	float precio_uva;
+	int tamanioo;
+	string tipo;
+	char r;
+	float total;
+	ofstream uvas_ar;
+	
+	uvas_ar.open("UVAS.txt",ios::out);
+
+
+	do
+  {
+	cout << "Ingresa los kilos de uvas" << endl;
+	cin >> kilos;
+	cout << "Ingresa el precio_uva por kilo" << endl;
+	cin >> precio_uva;
+	cout << "Ingresa el tipo de uva: A o B" << endl;
+	cin >> tipo;
+	cout << "Ingresa el tamaño de la uva: 1 o 2" << endl;
+	cin >> tamanioo;
+	if (tipo=="A"||"a") {
+		if (tamanioo==1) {
+			precio_uva = precio_uva+20;
+		} else {
+			precio_uva = precio_uva+30;
+		}
+	} else {
+		if (tamanioo==1) {
+			precio_uva = precio_uva-30;
+		} else {
+			precio_uva = precio_uva-50;
+		}
+	}
+	total = precio_uva*kilos;
+	cout << "La ganancia por " << kilos << " kilos de uva es: $" << total << endl;
+	
+	uvas_ar<<"Kilos de Uva:"<<kilos<<"\t\tPrecio:"<<precio_uva<<"\tTipo:"<<tipo<<"\tTamaño:"<<tamanioo<<endl;
+	uvas_ar<<"La ganancia por " << kilos << " kilos de uva es: $" << total << endl<<endl;
+	uvas_ar<<"<------------------------------------->"<<endl<<endl;
+
+	
+	cout<<"desea ingresar Nuevamente si(s) , no (n)): ";
+    cin>>r;
+
+
+    cin.ignore();
+  }while(r=='s');
+		uvas_ar.close();
+}
